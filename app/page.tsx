@@ -1,8 +1,109 @@
-'use client'
+"use client";
 import React from "react";
-import {motion} from 'framer-motion';
+import { motion, MotionProps } from "framer-motion";
 
-import { FaGithub } from "react-icons/fa"; // ✅ for some bundlers this works better
+import { FaGithub } from "react-icons/fa";
+type Project = {
+  title: string;
+  desc: React.ReactNode;
+  tech: string[];
+  image: string;
+  github: string;
+};
+
+const projects: Project[] = [
+  {
+    title: "SecureVault: Full stack Password Manager",
+    desc: (
+      <>
+        <p>
+          • Built a secure dashboard and browser extension with AES encryption
+          and auto-fill support.
+        </p>
+        <p>
+          • Includes support for Wi-Fi, credit cards, and random password
+          generation.
+        </p>
+      </>
+    ),
+    tech: ["Next.js", "Tailwind CSS", "React", "Typescript", "MongoDB"],
+    image: "securevault.png",
+    github: "https://github.com/gargpb31/SecureVault",
+  },
+  {
+    title: "Campus Trade: A buy and sell platform",
+    desc: (
+      <>
+        <p>
+          • A student-focused platform to buy, sell, and exchange items within
+          your campus.
+        </p>
+        <p>• Simple, secure, and convenient trading for college communities.</p>
+      </>
+    ),
+    tech: ["Node.js", "EJS", "HTML/CSS", "MYSQL"],
+    image: "campustrade.png",
+    github: "https://github.com/gargpb31/Campus-Trade",
+  },
+  {
+    title: "Edutech : An e-learning platform",
+    desc: (
+      <>
+        <p>
+          • Designed an e-learning platform with a live coding editor and
+          curated DSA/ML content.
+        </p>
+        <p>
+          • Real-time output rendering and syntax highlighting using
+          custom-built code sandbox.
+        </p>
+      </>
+    ),
+    tech: ["Javascript", "Bootstrap", "React"],
+    image: "Eduteck.png",
+    github: "https://github.com/gargpb31/Edutech",
+  },
+  {
+    title: "Polygon Area Calculator",
+    desc: (
+      <>
+        <p>
+          • Developed a Java desktop application to compute polygon areas given
+          coordinate inputs.
+        </p>
+        <p>
+          • Utilized geometric formulas for fast, accurate computation and clean
+          UI design.
+        </p>
+      </>
+    ),
+    tech: ["Java", "Java Swing", "Java AWT", "OOM"],
+    image: "poly.png",
+    github: "https://github.com/gargpb31/Polygon-Area-Calculator",
+  },
+  {
+    title: "Sunny Garg - Portfolio",
+    desc: (
+      <>
+        <p>
+          • A showcase of my work in web development, DSA, and real-world tech
+          projects.
+        </p>
+        <p>
+          • Explore my projects, skills, and passion for building scalable,
+          user-focused solutions.
+        </p>
+      </>
+    ),
+    tech: ["React", "Typescript", "Tailwind CSS"],
+    image: "portfolio.png",
+    github: "https://github.com/gargpb31/Portfolio",
+  },
+];
+
+// A type-safe wrapper for motion.div
+const MotionDiv: React.FC<MotionProps & { children: React.ReactNode; className?: string }> = motion.div;
+
 
 export default function Portfolio() {
   return (
@@ -117,118 +218,24 @@ export default function Portfolio() {
       </section>
 
       {/* Projects */}
+      {/* Projects */}
       <section className="px-10 py-16 text-center">
         <h2 className="text-3xl font-semibold text-pink-400 mb-12">Projects</h2>
         <div className="space-y-10 max-w-5xl mx-auto">
-          {[
-            {
-              title: "SecureVault: Full stack Password Manager",
-              desc: (
-                <>
-                  <p>
-                    • Built a secure dashboard and browser extension with AES
-                    encryption and auto-fill support.
-                  </p>
-                  <p>
-                    • Includes support for Wi-Fi, credit cards, and random
-                    password generation.
-                  </p>
-                </>
-              ),
-              tech: [
-                "Next.js",
-                "Tailwind CSS",
-                "React",
-                "Typescript",
-                "MongoDB",
-              ],
-              image: "securevault.png",
-              github: "https://github.com/gargpb31/SecureVault",
-            },
-            {
-              title: "Campus Trade: A buy and sell platform",
-              desc: (
-                <>
-                  <p>
-                    • A student-focused platform to buy, sell, and exchange
-                    items within your campus.
-                  </p>
-                  <p>
-                    • Simple, secure, and convenient trading for college
-                    communities.
-                  </p>
-                </>
-              ),
-              tech: ["Node.js", "EJS", "HTML/CSS", "MYSQL"],
-              image: "campustrade.png",
-              github: "https://github.com/gargpb31/Campus-Trade",
-            },
-            {
-              title: "Edutech : An e-learning platform",
-              desc: (
-                <>
-                  <p>
-                    • Designed an e-learning platform with a live coding editor
-                    and curated DSA/ML content.
-                  </p>
-                  <p>
-                    • Real-time output rendering and syntax highlighting using
-                    custom-built code sandbox.
-                  </p>
-                </>
-              ),
-              tech: ["Javascript", "Bootstrap", "React"],
-              image: "Eduteck.png",
-              github: "https://github.com/gargpb31/Edutech",
-            },
-            {
-              title: "Polygon Area Calculator",
-              desc: (
-                <>
-                  <p>
-                    • Developed a Java desktop application to compute polygon
-                    areas given coordinate inputs.
-                  </p>
-                  <p>
-                    • Utilized geometric formulas for fast, accurate computation
-                    and clean UI design.
-                  </p>
-                </>
-              ),
-              tech: ["Java", "Java Swing", "Java AWT", "OOM"],
-              image: "poly.png",
-              github: "https://github.com/gargpb31/Polygon-Area-Calculator",
-            },
-            {
-              title: "Sunny Garg - Portfolio",
-              desc: (
-                <>
-                  <p>
-                    • A showcase of my work in web development, DSA, and
-                    real-world tech projects.
-                  </p>
-                  <p>
-                    • Explore my projects, skills, and passion for building
-                    scalable, user-focused solutions.
-                  </p>
-                </>
-              ),
-              tech: ["React", "Typescript", "Tailwind CSS"],
-              image: "portfolio.png",
-              github: "https://github.com/gargpb31/Portfolio",
-            },
-          ].map((project, index) => (
-            <motion.div
+          {projects.map((project, index) => (
+            // ✅ Use the new type-safe wrapper component
+            <MotionDiv
               key={index}
               className="flex flex-col md:flex-row items-center bg-gray-800 rounded-2xl p-6 md:p-8 shadow-lg hover:shadow-pink-500/30 transition duration-300"
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.5 }}
             >
               <img
                 src={project.image}
                 alt={project.title}
-                className="w-1/2 md:w-1/6 rounded-xl mb-4 md:mb-0 md:mr-8"
+                className="w-full md:w-1/4 lg:w-1/5 rounded-xl mb-4 md:mb-0 md:mr-8"
               />
               <div className="text-left text-gray-300 space-y-3 w-full">
                 <div className="flex items-center justify-between">
@@ -256,11 +263,10 @@ export default function Portfolio() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </MotionDiv>
           ))}
         </div>
       </section>
-
       {/* Education */}
       <section className="px-6 sm:px-10 py-10 flex flex-col items-center">
         <div className="bg-gradient-to-br from-purple-900 to-purple-700 rounded-3xl p-6 sm:p-10 shadow-xl w-full sm:w-2/3 md:w-1/2 text-center border border-purple-500">
@@ -282,7 +288,6 @@ export default function Portfolio() {
           Coding Profiles
         </h2>
         <div className="flex flex-col sm:flex-row justify-center gap-6">
-          {/* LeetCode Card */}
           {/* LeetCode Card */}
           <div className="bg-pink-800 border border-yellow-400 rounded-2xl p-6 w-full sm:w-1/3 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-yellow-300 hover:ring-offset-2">
             <img
@@ -329,11 +334,11 @@ export default function Portfolio() {
             </a>
           </div>
 
-          {/* GitHub Card */}
+          {/* CodeChef Card */}
           <div className="bg-pink-800 border border-green-400 rounded-2xl p-6 w-full sm:w-1/3 shadow-lg transform transition-transform duration-300 hover:scale-105 hover:ring-2 hover:ring-green-300 hover:ring-offset-2">
             <img
               src="codechef.png"
-              alt="LeetCode Logo"
+              alt="CodeChef Logo"
               className="w-16 h-16 mx-auto mb-4 rounded-lg bg-white p-1"
             />
             <h3 className="text-xl font-semibold text-green-300">Codechef</h3>
