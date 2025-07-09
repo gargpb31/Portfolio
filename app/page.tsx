@@ -3,6 +3,7 @@ import React from "react";
 import { motion, MotionProps } from "framer-motion";
 
 import { FaGithub } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 type Project = {
   title: string;
   desc: React.ReactNode;
@@ -117,18 +118,14 @@ export default function Portfolio() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="in.jpeg" alt="LinkedIn" className="inline h-6" />
+            <FaLinkedin size={24} color="#0077b5" className="inline h-6" />
           </a>
           <a
             href="https://github.com/gargpb31"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
-              src="github-mark-white.png"
-              alt="GitHub"
-              className="inline h-6"
-            />
+            <FaGithub size={24} color="white" className="inline h-6" />
           </a>
         </div>
       </header>
@@ -402,12 +399,12 @@ export default function Portfolio() {
           </a>
         </p>
         <p className="mt-2 flex justify-center items-center gap-2">
-          LinkedIn:
+         
           <a
             href="https://linkedin.com/in/gargpb31"
             className="flex items-center gap-1 text-blue-300 underline"
           >
-            <img src="in.jpeg" alt="LinkedIn" className="h-5" /> gargpb31
+            <FaLinkedin size={24} color="#0077b5" className="h-5" /> LinkedIn:
           </a>
         </p>
       </section>
