@@ -404,7 +404,7 @@ export default function Portfolio() {
             href="https://linkedin.com/in/gargpb31"
             className="flex items-center gap-1 text-blue-300 underline"
           >
-            <FaLinkedin size={24} color="#0077b5" className="h-5" /> LinkedIn:
+            <FaLinkedin size={24} color="#0077b5" className="h-5" /> LinkedIn
           </a>
         </p>
       </section>
