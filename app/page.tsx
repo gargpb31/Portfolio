@@ -20,21 +20,15 @@ const MotionH2 :React.FC<
 const MotionHeader : React.FC<
   MotionProps & { children: React.ReactNode; className?: string }
 > = motion.header;
-const MotionMain : React.FC<
-MotionProps & { children: React.ReactNode; className?: string }
-> = motion.main;
-const MotionImg  : React.FC<
-MotionProps & { children: React.ReactNode; className?: string }
-> = motion.img;
+
+
 const MotionP  : React.FC<
 MotionProps & { children: React.ReactNode; className?: string }
 > =motion.p;
 const MotionH1 : React.FC<
 MotionProps & { children: React.ReactNode; className?: string }
 > =motion.h1;
-const MotionFooter  : React.FC<
-MotionProps & { children: React.ReactNode; className?: string }
-> = motion.footer;
+
 
 type Project = {
   title: string;
