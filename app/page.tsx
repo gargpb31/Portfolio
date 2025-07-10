@@ -30,6 +30,8 @@ MotionProps & { children: React.ReactNode; className?: string }
 > =motion.h1;
 
 
+
+
 type Project = {
   title: string;
   desc: React.ReactNode;
