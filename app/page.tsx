@@ -320,6 +320,82 @@ export default function Portfolio() {
             </div>
           </MotionDiv>
         </MotionSection>
+ {/* Coding Profiles */}
+        <MotionSection
+          className="px-6 md:px-12 py-24 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={sectionVariants}
+        >
+          <MotionH2
+            className="text-4xl font-bold text-white mb-12"
+            variants={itemVariants}
+          >
+            Coding Profiles
+          </MotionH2>
+          <MotionDiv
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={itemVariants}
+          >
+            {[
+              {
+                name: "LeetCode",
+                user: "gargpb31",
+                rating: "1981 (Knight)",
+                logo: "leetcode.png",
+                link: "https://leetcode.com/gargpb31",
+                color: "text-yellow-400",
+                hoverColor: "hover:text-yellow-300",
+              },
+              {
+                name: "Codeforces",
+                user: "gargpb31",
+                rating: "1648 (Expert)",
+                logo: "codeforces.png",
+                link: "https://codeforces.com/profile/gargpb31",
+                color: "text-cyan-400",
+                hoverColor: "hover:text-cyan-300",
+              },
+              {
+                name: "CodeChef",
+                user: "gargpb31",
+                rating: "2008 (5 Star)",
+                logo: "codechef.png",
+                link: "https://www.codechef.com/users/gargpb31",
+                color: "text-green-400",
+                hoverColor: "hover:text-green-300",
+              },
+            ].map((profile) => (
+              <MotionDiv
+                key={profile.name}
+                className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-center transition-all duration-300 hover:border-violet-500 hover:bg-slate-800 hover:shadow-2xl hover:shadow-violet-500/10"
+                whileHover={{ y: -5 }}
+              >
+                <img
+                  src={profile.logo}
+                  alt={`${profile.name} Logo`}
+                  className="w-16 h-16 mx-auto mb-4 rounded-lg bg-white p-1"
+                />
+                <h3 className={`text-xl font-semibold ${profile.color}`}>
+                  {profile.name}
+                </h3>
+                <p className="text-sm text-gray-400 mt-2">@{profile.user}</p>
+                <p className="text-sm text-gray-300 mt-1 font-semibold">
+                  {profile.rating}
+                </p>
+                <a
+                  href={profile.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`mt-4 inline-flex items-center gap-1 text-sm ${profile.color}/80 ${profile.hoverColor} transition-colors`}
+                >
+                  Visit Profile <FiArrowUpRight />
+                </a>
+              </MotionDiv>
+            ))}
+          </MotionDiv>
+        </MotionSection>
 
         {/* Projects */}
         <MotionSection
@@ -479,82 +555,8 @@ export default function Portfolio() {
           </MotionDiv>
         </MotionSection>
 
-        {/* Coding Profiles */}
-        <MotionSection
-          className="px-6 md:px-12 py-24 text-center"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={sectionVariants}
-        >
-          <MotionH2
-            className="text-4xl font-bold text-white mb-12"
-            variants={itemVariants}
-          >
-            Coding Profiles
-          </MotionH2>
-          <MotionDiv
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-            variants={itemVariants}
-          >
-            {[
-              {
-                name: "LeetCode",
-                user: "gargpb31",
-                rating: "1981 (Knight)",
-                logo: "leetcode.png",
-                link: "https://leetcode.com/gargpb31",
-                color: "text-yellow-400",
-                hoverColor: "hover:text-yellow-300",
-              },
-              {
-                name: "Codeforces",
-                user: "gargpb31",
-                rating: "1648 (Expert)",
-                logo: "codeforces.png",
-                link: "https://codeforces.com/profile/gargpb31",
-                color: "text-cyan-400",
-                hoverColor: "hover:text-cyan-300",
-              },
-              {
-                name: "CodeChef",
-                user: "gargpb31",
-                rating: "2008 (5 Star)",
-                logo: "codechef.png",
-                link: "https://www.codechef.com/users/gargpb31",
-                color: "text-green-400",
-                hoverColor: "hover:text-green-300",
-              },
-            ].map((profile) => (
-              <MotionDiv
-                key={profile.name}
-                className="bg-slate-800/50 border border-slate-700 rounded-xl p-6 text-center transition-all duration-300 hover:border-violet-500 hover:bg-slate-800 hover:shadow-2xl hover:shadow-violet-500/10"
-                whileHover={{ y: -5 }}
-              >
-                <img
-                  src={profile.logo}
-                  alt={`${profile.name} Logo`}
-                  className="w-16 h-16 mx-auto mb-4 rounded-lg bg-white p-1"
-                />
-                <h3 className={`text-xl font-semibold ${profile.color}`}>
-                  {profile.name}
-                </h3>
-                <p className="text-sm text-gray-400 mt-2">@{profile.user}</p>
-                <p className="text-sm text-gray-300 mt-1 font-semibold">
-                  {profile.rating}
-                </p>
-                <a
-                  href={profile.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`mt-4 inline-flex items-center gap-1 text-sm ${profile.color}/80 ${profile.hoverColor} transition-colors`}
-                >
-                  Visit Profile <FiArrowUpRight />
-                </a>
-              </MotionDiv>
-            ))}
-          </MotionDiv>
-        </MotionSection>
+       
+        
       </main>
 
       {/* Footer */}
