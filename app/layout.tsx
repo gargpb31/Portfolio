@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,25 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sunny Garg",
-  description: "Personal Portfolio",
+  title: "Sunny Garg - Portfolio",
+  description:
+    "Personal portfolio of Sunny Garg - Competitive Programmer & Full-Stack Developer",
+  keywords: [
+    "portfolio",
+    "developer",
+    "competitive programming",
+    "full-stack",
+    "react",
+    "next.js",
+  ],
+  authors: [{ name: "Sunny Garg" }],
+  creator: "Sunny Garg",
+  openGraph: {
+    title: "Sunny Garg - Portfolio",
+    description:
+      "Personal portfolio of Sunny Garg - Competitive Programmer & Full-Stack Developer",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -23,11 +41,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
