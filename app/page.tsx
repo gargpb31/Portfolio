@@ -290,6 +290,125 @@ export default function Portfolio() {
           </MotionDiv>
         </MotionSection>
 
+        {/* Achievements Section */}
+        <MotionSection
+          className="px-6 md:px-12 py-24"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={sectionVariants}
+        >
+          <MotionH2
+            className="text-4xl font-bold text-center mb-16"
+            variants={itemVariants}
+          >
+            Major <span className="gradient-text">Achievements</span>
+          </MotionH2>
+
+          <MotionDiv className="max-w-6xl mx-auto" variants={itemVariants}>
+            {/* Flipkart Grid 7.0 Achievement */}
+            <div className="bg-gradient-to-br from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 border border-orange-200/50 dark:border-orange-700/50 rounded-3xl p-8 md:p-12 shadow-2xl">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                {/* Content */}
+                <div className="space-y-6">
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full flex items-center justify-center">
+                      <span className="text-white font-bold text-lg">🏆</span>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-slate-800 dark:text-slate-200">
+                        National Winner
+                      </h3>
+                      <p className="text-lg font-semibold gradient-text">
+                        Flipkart Grid 7.0 (2025)
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <p className="text-lg text-slate-700 dark:text-slate-300 leading-relaxed">
+                      <span className="font-bold text-orange-600 dark:text-orange-400">
+                        From 1.8+ lakh participants to the #1 spot
+                      </span>{" "}
+                      — what an incredible journey!
+                    </p>
+
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                      Thrilled to share that{" "}
+                      <span className="font-semibold text-slate-800 dark:text-slate-200">
+                        Team GridRaiders
+                      </span>{" "}
+                      has emerged as the
+                      <span className="font-bold gradient-text">
+                        {" "}
+                        National Winner of Flipkart Grid 7.0
+                      </span>
+                      !
+                    </p>
+
+                    <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                      After clearing tough coding rounds and making it to the{" "}
+                      <span className="font-semibold">Top 12</span>, we faced
+                      the{" "}
+                      <span className="font-bold">
+                        Grand Finale at Flipkart HQ in Bangalore
+                      </span>{" "}
+                      — building a full-fledged{" "}
+                      <span className="font-semibold text-orange-600 dark:text-orange-400">
+                        Search System
+                      </span>
+                      (Autosuggest + Search Results) aligned with the bold
+                      vision:
+                    </p>
+
+                    <div className="bg-white/50 dark:bg-slate-800/50 border border-orange-200/50 dark:border-orange-700/50 rounded-xl p-4">
+                      <p className="text-center text-lg font-bold text-orange-600 dark:text-orange-400">
+                        🔍 &ldquo;Every commerce search in India should begin
+                        with Flipkart.&rdquo;
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      <span className="px-4 py-2 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded-full text-sm font-medium">
+                        🏆 National Winner
+                      </span>
+                      <span className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-medium">
+                        🎯 Top 12 Finalists
+                      </span>
+                      <span className="px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
+                        🔍 Search System
+                      </span>
+                      <span className="px-4 py-2 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-full text-sm font-medium">
+                        💻 Full-Stack Development
+                      </span>
+                      <span className="px-4 py-2 bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 rounded-full text-sm font-medium">
+                        💰 ₹1,50,000 Prize
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Victory Photo */}
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-orange-100 to-yellow-100 dark:from-orange-900/30 dark:to-yellow-900/30 border-2 border-orange-300 dark:border-orange-600 rounded-2xl p-4 overflow-hidden shadow-xl">
+                    <Image
+                      src="/grid.jpeg"
+                      alt="Sunny Garg - National Winner Flipkart Grid 7.0"
+                      width={600}
+                      height={400}
+                      className="w-full h-64 md:h-80 object-cover rounded-xl"
+                    />
+                  </div>
+
+                  {/* Decorative elements */}
+                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-r from-orange-500 to-yellow-500 rounded-full opacity-20 animate-pulse"></div>
+                  <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full opacity-20 animate-pulse delay-1000"></div>
+                </div>
+              </div>
+            </div>
+          </MotionDiv>
+        </MotionSection>
+
         {/* Tech Stack */}
         <MotionSection
           className="px-6 md:px-12 py-24 text-center"
